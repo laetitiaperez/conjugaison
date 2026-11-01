@@ -1,0 +1,432 @@
+<title>Carte de la conjugaison</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Playwrite+FR+Moderne:wght@300;400&display=swap">
+<style>
+/* Concept : une page de cahier Seyès, avec les couleurs de la correction de grammaire. */
+:root {
+  --bg: #f4f6fc; --papier: #fbfcff; --encre: #1b2142; --doux: #535c7e; --trait: #cdd6ee; --seyes: #dfe5f5; --marge: #e0617a;
+  --c1: #2b5bc9; --c2: #0d7f62; --c3: #c92a4b; --c4: #7036d6; --c5: #0d6e88; --c6: #9c1fa6; --c7: #8f5a06;
+  --rad: #2b5bc9; --tm: #c92a4b; --pers: #0d7f62;
+  --surv: #fff3c4; --ecrit: "Playwrite FR Moderne", "Snell Roundhand", cursive; --texte: "Atkinson Hyperlegible", "Helvetica Neue", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #12162b; --papier: #1a1f3a; --encre: #e9ecfa; --doux: #a8b0d0; --trait: #333c63; --seyes: #1e2442; --marge: #e0617a;
+  --c1: #86a9ff; --c2: #57d3ac; --c3: #ff8ba3; --c4: #bb9cff; --c5: #63cfe8; --c6: #ec93f2; --c7: #e8b75c;
+  --rad: #86a9ff; --tm: #ff8ba3; --pers: #57d3ac; --surv: #4b4120; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #12162b; --papier: #1a1f3a; --encre: #e9ecfa; --doux: #a8b0d0; --trait: #333c63; --seyes: #1e2442; --marge: #e0617a;
+  --c1: #86a9ff; --c2: #57d3ac; --c3: #ff8ba3; --c4: #bb9cff; --c5: #63cfe8; --c6: #ec93f2; --c7: #e8b75c;
+  --rad: #86a9ff; --tm: #ff8ba3; --pers: #57d3ac; --surv: #4b4120; color-scheme: dark }
+* { box-sizing: border-box }
+html, body { height: 100% }
+body { background: var(--bg); color: var(--encre); font: 15px/1.5 var(--texte); padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 12px; display: flex; flex-direction: column; gap: 10px; min-height: 100% }
+button, input { font: inherit; color: inherit }
+button { cursor: pointer; background: none; border: 0 }
+:focus-visible { outline: 2px solid var(--c1); outline-offset: 2px }
+header { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 6px 24px }
+h1 { font: 400 clamp(22px, 3vw, 30px)/1.5 var(--ecrit); margin: 0 }
+.legende { display: flex; flex-wrap: wrap; gap: 4px 14px; align-items: baseline; color: var(--doux); font-size: 13px }
+.deco { font-size: 20px; font-weight: 700; letter-spacing: .01em; color: var(--encre) }
+.deco .r { color: var(--rad) } .deco .t { color: var(--tm) } .deco .p { color: var(--pers) }
+.deco .sep { color: var(--doux); font-weight: 400; padding-inline: 1px }
+.barre { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center }
+.vues { display: flex; border: 1px solid var(--trait); border-radius: 8px; overflow: hidden; background: var(--papier) }
+.vues button { padding: 6px 12px; border-right: 1px solid var(--trait) }
+.vues button:last-child { border-right: 0 }
+.vues button[aria-selected="true"] { background: var(--encre); color: var(--papier) }
+.recherche { position: relative; flex: 1 1 200px; min-width: 0; max-width: 340px }
+.recherche input { width: 100%; padding: 6px 10px; border: 1px solid var(--trait); border-radius: 8px; background: var(--papier) }
+#resultats { position: absolute; z-index: 20; top: calc(100% + 4px); left: 0; right: 0; background: var(--papier); border: 1px solid var(--trait); border-radius: 8px; box-shadow: 0 8px 24px rgb(0 0 0 / .18); overflow: hidden }
+#resultats button { display: block; width: 100%; text-align: left; padding: 6px 10px }
+#resultats button:hover, #resultats button:focus { background: var(--bg) }
+#resultats small { color: var(--doux); display: block }
+.outil { padding: 6px 10px; border: 1px solid var(--trait); border-radius: 8px; background: var(--papier) }
+.filtres { display: flex; flex-wrap: wrap; gap: 4px 16px; align-items: center; font-size: 13.5px }
+.fg { display: flex; flex-wrap: wrap; gap: 4px; align-items: center }
+.fg > span { color: var(--doux); margin-right: 2px }
+.puce { padding: 2px 9px; border: 1px solid var(--trait); border-radius: 999px; background: var(--papier) }
+.puce[aria-pressed="true"] { background: var(--encre); color: var(--papier); border-color: var(--encre) }
+#bilan { color: var(--doux) }
+main { flex: 1; display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 12px; min-height: 0 }
+.scene { min-width: 0; min-height: 420px; height: calc(100vh - 150px); border: 1px solid var(--trait); border-radius: 8px; overflow: auto; background-color: var(--papier);
+  background-image: linear-gradient(var(--seyes) 1px, transparent 1px), linear-gradient(90deg, var(--seyes) 1px, transparent 1px); background-size: 100% 8px, 32px 100%; background-attachment: local }
+#canevas { position: relative }
+#canevas svg { position: absolute; inset: 0; pointer-events: none }
+#canevas path { fill: none; stroke-width: 2; opacity: .55 }
+.noeud { position: absolute; left: 0; top: 0; white-space: nowrap; padding: 3px 9px; border-radius: 7px; border: 1.5px solid var(--c); background: var(--papier); color: var(--encre); font-size: 14px; line-height: 20px; transition: transform .22s ease, opacity .15s }
+.noeud.n1 { background: var(--c); color: var(--papier); font-weight: 700 }
+.noeud.racine { font: 400 19px/1.6 var(--ecrit); background: var(--encre); color: var(--papier); border-color: var(--encre); padding: 8px 18px; border-radius: 28px }
+.noeud .compte { color: var(--doux); font-size: 12px; margin-left: 6px }
+.noeud.n1 .compte { color: inherit; opacity: .8 }
+.noeud.choisi { box-shadow: 0 0 0 3px var(--surv), 0 0 0 4.5px var(--c) }
+.noeud.eteint { opacity: .28 }
+.noeud.sans { border-style: dashed }
+#plan { list-style: none; margin: 0; padding: 8px }
+#plan ul { list-style: none; margin: 0; padding-left: 16px; border-left: 2px solid var(--c) }
+#plan .noeud { position: static; display: block; margin: 4px 0; white-space: normal; text-align: left; max-width: 100% }
+#tableau-wrap { height: 100%; overflow: auto; background: var(--papier) }
+table { border-collapse: collapse; width: 100% }
+th, td { text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--trait); vertical-align: top }
+#classement th { position: sticky; top: 0; background: var(--papier); z-index: 1; white-space: nowrap }
+#classement th button { font-weight: 700; padding: 0 }
+#classement tbody tr { cursor: pointer }
+#classement tbody tr:hover { background: var(--bg) }
+#classement tr.choisi { background: var(--surv) }
+#vue-sources { padding: 12px 16px; background: var(--papier); overflow: auto; height: 100% }
+#vue-sources h2 { font-size: 17px; margin: 14px 0 4px }
+#vue-sources li { margin-block: 3px }
+#vue-sources p { max-width: 70ch }
+.fiche { min-width: 0; height: calc(100vh - 150px); min-height: 420px; overflow: auto; background: var(--papier); border: 1px solid var(--trait); border-radius: 8px; padding: 14px 16px 18px 28px; position: relative;
+  background-image: linear-gradient(90deg, transparent 15px, var(--marge) 15px, var(--marge) 16.5px, transparent 16.5px); background-attachment: local }
+.fiche h2 { font-size: 21px; line-height: 1.25; margin: 2px 0 8px; text-wrap: balance }
+.fiche h3 { font-size: 12.5px; letter-spacing: .05em; text-transform: uppercase; color: var(--doux); margin: 14px 0 4px }
+.fiche p { margin: 0 0 6px }
+.fiche ul, .fiche ol { margin: 0; padding-left: 18px }
+.fiche li { margin-block: 2px }
+.fil { font-size: 12.5px; color: var(--doux) }
+.fil button { padding: 0; text-decoration: underline; text-underline-offset: 2px; color: inherit }
+#fermer { position: absolute; right: 8px; top: 8px; display: none; padding: 2px 8px; border: 1px solid var(--trait); border-radius: 6px }
+.valeurs dt { font-weight: 700 } .valeurs dd { margin: 0 0 5px }
+.valeurs { margin: 0 }
+.attention { border: 1.5px dashed var(--marge); border-radius: 6px; padding: 6px 10px; margin-top: 10px }
+.sanssource { font-size: 13px; font-weight: 700; color: var(--marge); margin-bottom: 6px }
+.liens { display: flex; flex-wrap: wrap; gap: 4px }
+.onglets { display: flex; flex-wrap: wrap; gap: 3px; margin-bottom: 6px }
+.formes td { padding: 2px 10px 2px 0; border: 0; font-variant-numeric: tabular-nums }
+.fiche .sources { font-size: 13px; padding-left: 16px }
+.fiche a, #vue-sources a { color: var(--c1) }
+#imprimable { display: none }
+@media (max-width: 900px) {
+  html, body { height: auto }
+  main { display: block }
+  .scene { height: auto; min-height: 0; max-height: none; overflow: visible }
+  #tableau-wrap { overflow-x: auto; height: auto } #vue-sources { height: auto }
+  .fiche { position: fixed; z-index: 30; left: 0; right: 0; bottom: 0; height: auto; max-height: 72%; min-height: 0; border-radius: 12px 12px 0 0; box-shadow: 0 -8px 28px rgb(0 0 0 / .25); padding-bottom: calc(18px + env(safe-area-inset-bottom, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
+  #fermer { display: block }
+}
+@media (prefers-reduced-motion: reduce) { .noeud { transition: none } }
+@page { size: A4; margin: 12mm }
+@media print {
+  body { display: block; padding: 0; background: #fff; color: #000; font-size: 9.5pt; line-height: 1.32 }
+  header .legende, .barre, .filtres, main { display: none !important }
+  #imprimable { display: block }
+  #imprimable h2 { font-size: 13pt; margin: 10pt 0 4pt; break-after: avoid }
+  #imprimable .cols { column-count: 2; column-gap: 16pt }
+  #imprimable article { break-inside: avoid; margin-bottom: 6pt }
+  #imprimable h3 { font-size: 10pt; margin: 0 }
+  #imprimable p { margin: 0 }
+  #imprimable small { color: #444 }
+}
+</style>
+
+<header>
+  <h1>La conjugaison</h1>
+  <div class="legende">
+    <span class="deco"><span class="r">chant</span><span class="sep">·</span><span class="t">ai</span><span class="sep">·</span><span class="p">ent</span></span>
+    <span>radical, marque de temps et de mode, marque de personne</span>
+  </div>
+</header>
+
+<div class="barre">
+  <div class="vues" role="tablist" aria-label="Vue">
+    <button role="tab" id="v-carte" aria-selected="true">Carte</button>
+    <button role="tab" id="v-classer" aria-selected="false">Classer les temps</button>
+    <button role="tab" id="v-sources" aria-selected="false">Sources</button>
+  </div>
+  <div class="recherche">
+    <input id="q" type="search" placeholder="Chercher une notion, un temps…" aria-label="Chercher une notion" autocomplete="off">
+    <div id="resultats" hidden></div>
+  </div>
+  <button class="outil" id="deplier">Tout déplier</button>
+  <button class="outil" id="replier">Replier</button>
+</div>
+<div class="filtres" id="filtres"></div>
+
+<main>
+  <section class="scene" id="scene" aria-label="Carte mentale">
+    <div id="vue-carte">
+      <div id="canevas"><svg aria-hidden="true"></svg></div>
+      <ul id="plan" hidden></ul>
+    </div>
+    <div id="tableau-wrap" hidden><table id="classement"></table></div>
+    <div id="vue-sources" hidden></div>
+  </section>
+  <aside class="fiche" id="fiche" aria-live="polite"></aside>
+</main>
+<div id="imprimable"></div>
+
+<script>
+/*DONNEES*/
+const parId = Object.fromEntries(FICHES.map(f => [f.id, f]));
+const enfants = {};
+FICHES.forEach(f => { if (f.p) (enfants[f.p] ??= []).push(f.id); });
+const DROITE = ["modes", "construire", "personne"], GAUCHE = ["identifier", "valeurs", "voix", "pieges"];
+const COUL = Object.fromEntries(BRANCHES.map(([id], i) => [id, `var(--c${i + 1})`]));
+const VERBES = [["chanter", "chanter"], ["finir", "finir"], ["prendre", "prendre"], ["etre", "être"], ["avoir", "avoir"], ["aller", "aller"]];
+const GROUPE_VERBE = { g1: "chanter", g2: "finir", g3: "prendre" };
+const FILTRES = [
+  ["Mode", [["ind", "Indicatif"], ["sub", "Subjonctif"], ["imp", "Impératif"], ["np", "Non personnels"]]],
+  ["Forme", [["simple", "Simple"], ["compose", "Composé"]]],
+  ["Époque", [["passe", "Passé"], ["present", "Présent"], ["futur", "Futur"], ["nontemp", "Non temporel"]]],
+  ["Verbes", [["g1", "1er groupe"], ["g2", "2e groupe"], ["g3", "3e groupe"]]]
+];
+// Une fiche de temps vaut pour les trois groupes de verbes.
+FICHES.forEach(f => { f.tag ??= []; if (f.forme) f.tag.push("g1", "g2", "g3"); });
+
+const etat = { ouverts: new Set(["verbe", ...BRANCHES.map(b => b[0])]), choisi: "verbe", vue: "carte", filtres: new Set(), verbe: "chanter", tri: null };
+const $ = id => document.getElementById(id);
+const etroit = matchMedia("(max-width: 900px)");
+const ancetres = id => { const r = []; for (let f = parId[id]; f && f.p; f = parId[f.p]) r.push(f.p); return r; };
+const branche = id => id === "verbe" ? null : parId[id].p === "verbe" ? id : branche(parId[id].p);
+const descendants = id => (enfants[id] || []).reduce((n, e) => n + 1 + descendants(e), 0);
+
+function correspond(f) {
+  if (!etat.filtres.size) return true;
+  return FILTRES.every(([, puces]) => {
+    const actives = puces.map(p => p[0]).filter(c => etat.filtres.has(c));
+    return !actives.length || actives.some(c => f.tag.includes(c));
+  });
+}
+const trouves = () => FICHES.filter(f => f.id !== "verbe" && f.tag.length && correspond(f));
+
+function creerNoeud(f) {
+  const b = document.createElement("button");
+  const prof = ancetres(f.id).length;
+  const haut = branche(f.id);
+  b.className = "noeud" + (f.id === "verbe" ? " racine" : prof === 1 ? " n1" : "") + (f.id === etat.choisi ? " choisi" : "") + (f.nosrc ? " sans" : "");
+  if (haut) b.style.setProperty("--c", COUL[haut]);
+  b.textContent = f.t;
+  b.dataset.id = f.id;
+  const n = descendants(f.id);
+  if (n && !etat.ouverts.has(f.id)) {
+    const c = document.createElement("span"); c.className = "compte"; c.textContent = "+" + n; b.append(c);
+  }
+  if (etat.filtres.size) {
+    const allume = correspond(f) && f.tag.length || trouves().some(t => ancetres(t.id).includes(f.id));
+    if (!allume) b.classList.add("eteint");
+  }
+  b.onclick = () => choisir(f.id, true);
+  return b;
+}
+
+function dessinerCarte() {
+  const can = $("canevas"), svg = can.querySelector("svg");
+  can.querySelectorAll(".noeud").forEach(n => n.remove());
+  const lignes = [], ligneH = 34, ecartX = 44;
+  const places = {};
+  function visibles(id, prof, cote, liste) {
+    liste.push({ id, prof, cote });
+    if (etat.ouverts.has(id)) (enfants[id] || []).forEach(e => visibles(e, prof + 1, cote, liste));
+    return liste;
+  }
+  const tous = [{ id: "verbe", prof: 0, cote: 0 }];
+  DROITE.forEach(b => visibles(b, 1, 1, tous));
+  GAUCHE.forEach(b => visibles(b, 1, -1, tous));
+  tous.forEach(n => { const el = creerNoeud(parId[n.id]); can.append(el); n.el = el; n.l = el.offsetWidth; n.h = el.offsetHeight; places[n.id] = n; });
+  // Largeur de chaque colonne, par côté et par profondeur.
+  const col = { "1": [], "-1": [] };
+  tous.forEach(n => { if (n.prof) { const c = col[n.cote]; c[n.prof] = Math.max(c[n.prof] || 0, n.l); } });
+  const hauteur = id => {
+    const e = etat.ouverts.has(id) ? enfants[id] || [] : [];
+    return places[id].H = Math.max(ligneH, e.reduce((s, x) => s + hauteur(x), 0));
+  };
+  const totalD = DROITE.reduce((s, b) => s + hauteur(b) + 10, 0), totalG = GAUCHE.reduce((s, b) => s + hauteur(b) + 10, 0);
+  const H = Math.max(totalD, totalG, 300) + 32;
+  const largeurCote = c => col[c].reduce((s, w) => s + (w || 0) + ecartX, 0);
+  const racine = places.verbe;
+  const cx = largeurCote(-1) + racine.l / 2 + 28;
+  const W = cx + racine.l / 2 + largeurCote(1) + 28;
+  const xCol = (c, p) => { let d = racine.l / 2 + ecartX; for (let i = 1; i < p; i++) d += col[c][i] + ecartX; return d; };
+  function poser(id, y0) {
+    const n = places[id];
+    n.y = y0 + n.H / 2;
+    n.x = n.cote > 0 ? cx + xCol(1, n.prof) : cx - xCol(-1, n.prof) - n.l;
+    let y = y0;
+    if (etat.ouverts.has(id)) (enfants[id] || []).forEach(e => { poser(e, y); y += places[e].H; });
+  }
+  let y = (H - totalD) / 2; DROITE.forEach(b => { poser(b, y); y += places[b].H + 10; });
+  y = (H - totalG) / 2; GAUCHE.forEach(b => { poser(b, y); y += places[b].H + 10; });
+  racine.x = cx - racine.l / 2; racine.y = H / 2;
+  can.style.width = W + "px"; can.style.height = H + "px";
+  svg.setAttribute("width", W); svg.setAttribute("height", H);
+  tous.forEach(n => {
+    n.el.style.transform = `translate(${n.x}px, ${n.y - n.h / 2}px)`;
+    const f = parId[n.id];
+    if (!f.p) return;
+    const p = places[f.p];
+    const x1 = n.cote > 0 ? p.x + p.l : p.x, x2 = n.cote > 0 ? n.x : n.x + n.l, m = (x1 + x2) / 2;
+    const eteint = n.el.classList.contains("eteint") ? ' style="opacity:.14"' : "";
+    lignes.push(`<path d="M${x1} ${p.y}C${m} ${p.y} ${m} ${n.y} ${x2} ${n.y}" stroke="${COUL[branche(n.id)]}"${eteint}/>`);
+  });
+  svg.innerHTML = lignes.join("");
+  return places;
+}
+
+function dessinerPlan() {
+  const plan = $("plan"); plan.textContent = "";
+  const branche_ = (id, parent) => {
+    const li = document.createElement("li");
+    li.append(creerNoeud(parId[id]));
+    const e = enfants[id] || [];
+    if (e.length && etat.ouverts.has(id)) {
+      const ul = document.createElement("ul");
+      ul.style.setProperty("--c", COUL[branche(e[0])]);
+      e.forEach(x => branche_(x, ul));
+      li.append(ul);
+    }
+    parent.append(li);
+  };
+  branche_("verbe", plan);
+  plan.querySelector("button").style.display = "inline-block";
+  const racine = plan.firstElementChild;
+  const ul = document.createElement("ul"); ul.style.border = "0"; ul.style.padding = "0";
+  const liste = racine.querySelector("ul");
+  if (liste) { ul.append(...liste.children); liste.remove(); racine.append(ul); }
+}
+
+function dessinerClassement() {
+  const lignes = FICHES.filter(f => f.tm && correspond(f));
+  const tetes = ["Temps", "Mode", "Forme", "Auxiliaire au", "Époque", "Aspect", "Exemple"];
+  const val = (f, i) => i === 0 ? f.t : i === 6 ? exemple(f) : f.tm[i - 1];
+  if (etat.tri != null) lignes.sort((a, b) => val(a, etat.tri).localeCompare(val(b, etat.tri), "fr"));
+  const t = $("classement");
+  t.innerHTML = `<thead><tr>${tetes.map((h, i) => `<th><button data-c="${i}">${h}${etat.tri === i ? " ↓" : ""}</button></th>`).join("")}</tr></thead>
+  <tbody>${lignes.map(f => `<tr data-id="${f.id}" class="${f.id === etat.choisi ? "choisi" : ""}">${tetes.map((_, i) => `<td>${i === 0 ? "<b>" + f.t + "</b>" : val(f, i)}</td>`).join("")}</tr>`).join("")}</tbody>`;
+  t.querySelectorAll("th button").forEach(b => b.onclick = () => { etat.tri = +b.dataset.c; dessinerClassement(); });
+  t.querySelectorAll("tbody tr").forEach(r => r.onclick = () => choisir(r.dataset.id, false));
+  if (!lignes.length) t.tBodies[0].innerHTML = `<tr><td colspan="7">Aucun temps ne correspond à ces filtres.</td></tr>`;
+}
+function exemple(f) {
+  const l = FORMES[etat.verbe][f.forme];
+  return l ? l[0] : "";
+}
+
+function dessinerSources() {
+  const groupes = {};
+  Object.values(SOURCES).forEach(s => (groupes[s[0]] ??= []).push(s));
+  $("vue-sources").innerHTML = `
+  <h2 style="margin-top:0">Ce que couvre la carte pour le CRPE</h2>
+  <p>Pour la session 2027, le programme de français renvoie au cycle 4 « en vigueur à la rentrée 2026 ». Le concours bac+5 ajoute « L'étude de la langue au lycée ». À cette rentrée, le nouveau programme s'applique en 5e, et l'ancien reste en vigueur en 4e et en 3e : la carte couvre donc les deux, ainsi que la partie lycée.</p>
+  <p><a href="https://www.devenirenseignant.gouv.fr/le-programme-des-epreuves-des-concours-externes-bac3-de-recrutement-de-professeurs-des-ecoles-1382" target="_blank" rel="noopener">Programme du concours bac+3</a> · <a href="https://www.devenirenseignant.gouv.fr/programmes-des-concours-de-recrutement-de-professeurs-des-ecoles-1160" target="_blank" rel="noopener">Programme du concours bac+5</a> · <a href="https://eduscol.education.gouv.fr/4362/enseigner-au-cycle-4" target="_blank" rel="noopener">Calendrier du cycle 4</a></p>
+  <h2>Ordre de priorité</h2>
+  <p>Terminologie et programmes français d'abord, puis l'Office québécois de la langue française et l'Académie française pour les règles détaillées. Le Conjugueur n'est pas une source officielle : il sert seulement aux tableaux de formes des six verbes modèles. Une fiche sans source officielle porte un cadre en pointillé.</p>
+  ${Object.entries(groupes).map(([g, l]) => `<h2>${g}</h2><ul>${l.map(s => `<li><a href="${s[2]}" target="_blank" rel="noopener">${s[1]}</a></li>`).join("")}</ul>`).join("")}`;
+}
+
+function dessinerFiche() {
+  const f = parId[etat.choisi];
+  const fil = ancetres(f.id).reverse().map(a => `<button data-va="${a}">${parId[a].t}</button>`).join(" › ");
+  let h = `<button id="fermer">Fermer</button>${fil ? `<div class="fil">${fil}</div>` : ""}<h2>${f.t}</h2>`;
+  if (f.nosrc) h += `<div class="sanssource">Pas de définition officielle trouvée</div>`;
+  h += `<p>${f.d}</p>`;
+  if (f.deco) h += `<p class="deco">ils <span class="r">${f.deco[0]}</span><span class="sep">·</span><span class="t">${f.deco[1]}</span><span class="sep">·</span><span class="p">${f.deco[2]}</span></p>`;
+  if (f.f) h += `<h3>Formation</h3><ul>${f.f.map(x => `<li>${x}</li>`).join("")}</ul>`;
+  if (f.forme) {
+    const lignes = FORMES[etat.verbe][f.forme] || [];
+    h += `<h3>Formes</h3><div class="onglets">${VERBES.map(([k, v]) => `<button class="puce" data-v="${k}" aria-pressed="${k === etat.verbe}">${v}</button>`).join("")}</div>
+    <table class="formes">${lignes.filter((l, i) => !(f.id === "part-passe" && i > 0 && i < 4)).map(l => `<tr><td>${l}</td></tr>`).join("")}</table>`;
+  }
+  if (f.v) h += `<h3>Valeurs et cas</h3><dl class="valeurs">${f.v.map(([a, b]) => `<dt>${a}</dt><dd>${b}</dd>`).join("")}</dl>`;
+  if (f.x) h += `<h3>Exemples</h3><ul>${f.x.map(x => `<li>${x}</li>`).join("")}</ul>`;
+  if (f.n) h += `<div class="attention">${f.n}</div>`;
+  const suite = [...(enfants[f.id] || []), ...(f.l || []).filter(i => !(enfants[f.id] || []).includes(i))];
+  if (suite.length) h += `<h3>Voir aussi</h3><div class="liens">${suite.map(i => `<button class="puce" data-va="${i}">${parId[i].t}</button>`).join("")}</div>`;
+  h += `<h3>Sources</h3><ul class="sources">${f.s.map(([k, p]) => `<li><a href="${SOURCES[k][2]}" target="_blank" rel="noopener">${SOURCES[k][1]}</a>${p ? ", " + p : ""}</li>`).join("")}</ul>`;
+  const a = $("fiche");
+  a.innerHTML = h; a.scrollTop = 0;
+  a.querySelectorAll("[data-va]").forEach(b => b.onclick = () => choisir(b.dataset.va, false));
+  a.querySelectorAll("[data-v]").forEach(b => b.onclick = () => { etat.verbe = b.dataset.v; dessinerFiche(); if (etat.vue === "classer") dessinerClassement(); });
+  $("fermer").onclick = () => { a.hidden = true; };
+}
+
+function centrer(id, places) {
+  const s = $("scene"), n = places && places[id];
+  if (!n || etroit.matches) return;
+  s.scrollTo({ left: n.x + n.l / 2 - s.clientWidth / 2, top: n.y - s.clientHeight / 2, behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
+}
+
+function dessiner() {
+  const e = etroit.matches;
+  $("canevas").hidden = e; $("plan").hidden = !e;
+  $("vue-carte").hidden = etat.vue !== "carte";
+  $("tableau-wrap").hidden = etat.vue !== "classer";
+  $("vue-sources").hidden = etat.vue !== "sources";
+  ["carte", "classer", "sources"].forEach(v => $("v-" + v).setAttribute("aria-selected", etat.vue === v));
+  $("deplier").hidden = $("replier").hidden = etat.vue !== "carte";
+  let places = null;
+  if (etat.vue === "carte") { if (e) dessinerPlan(); else places = dessinerCarte(); }
+  if (etat.vue === "classer") dessinerClassement();
+  return places;
+}
+
+function choisir(id, depuisCarte) {
+  const f = parId[id];
+  if (depuisCarte && enfants[id]) {
+    if (etat.ouverts.has(id) && id === etat.choisi && id !== "verbe") etat.ouverts.delete(id); else etat.ouverts.add(id);
+  }
+  etat.choisi = id;
+  ancetres(id).forEach(a => etat.ouverts.add(a));
+  $("fiche").hidden = false;
+  dessinerFiche();
+  const places = dessiner();
+  if (etat.vue === "carte") centrer(id, places);
+}
+
+function poserFiltres() {
+  const z = $("filtres");
+  z.innerHTML = FILTRES.map(([n, l]) => `<div class="fg"><span>${n}</span>${l.map(([c, t]) => `<button class="puce" data-f="${c}" aria-pressed="false">${t}</button>`).join("")}</div>`).join("") + `<span id="bilan" aria-live="polite"></span>`;
+  z.querySelectorAll("[data-f]").forEach(b => b.onclick = () => {
+    const c = b.dataset.f;
+    etat.filtres.has(c) ? etat.filtres.delete(c) : etat.filtres.add(c);
+    b.setAttribute("aria-pressed", etat.filtres.has(c));
+    if (GROUPE_VERBE[c] && etat.filtres.has(c)) etat.verbe = GROUPE_VERBE[c];
+    const t = trouves();
+    if (etat.filtres.size) t.forEach(f => ancetres(f.id).forEach(a => etat.ouverts.add(a)));
+    $("bilan").textContent = etat.filtres.size ? `${t.length} notion${t.length > 1 ? "s" : ""}` : "";
+    dessinerFiche(); dessiner();
+  });
+}
+
+function chercher() {
+  const brut = $("q").value.trim().toLowerCase();
+  const sansAcc = s => s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
+  const r = $("resultats");
+  if (!brut) { r.hidden = true; return; }
+  const q = sansAcc(brut);
+  const score = f => sansAcc(f.t).includes(q) ? 2 : sansAcc(f.d).includes(q) ? 1 : 0;
+  const l = FICHES.map(f => [score(f), f]).filter(x => x[0]).sort((a, b) => b[0] - a[0]).slice(0, 8).map(x => x[1]);
+  r.innerHTML = l.length ? l.map(f => `<button data-id="${f.id}">${f.t}<small>${f.p ? parId[branche(f.id)].t : "Vue d'ensemble"}</small></button>`).join("") : `<button disabled>Aucune notion trouvée</button>`;
+  r.hidden = false;
+  r.querySelectorAll("[data-id]").forEach(b => b.onclick = () => { aller(b.dataset.id); });
+}
+function aller(id) {
+  $("q").value = ""; $("resultats").hidden = true;
+  if (etat.vue !== "carte") etat.vue = "carte";
+  choisir(id, false);
+}
+
+function imprimable() {
+  $("imprimable").innerHTML = BRANCHES.map(([id, t]) => {
+    const liste = []; const f = i => { liste.push(parId[i]); (enfants[i] || []).forEach(f); }; f(id);
+    return `<h2>${t}</h2><div class="cols">${liste.map(x => `<article><h3>${x.t}</h3><p>${x.d}</p>${x.f ? `<p>${x.f.join(" ")}</p>` : ""}${x.v ? `<p>${x.v.map(([a, b]) => `<b>${a} :</b> ${b}`).join(" ; ")}</p>` : ""}${x.n ? `<p><b>Attention :</b> ${x.n}</p>` : ""}<small>${x.s.map(([k, p]) => SOURCES[k][1] + (p ? ", " + p : "")).join(" · ")}</small></article>`).join("")}</div>`;
+  }).join("");
+}
+
+["carte", "classer", "sources"].forEach(v => $("v-" + v).onclick = () => { etat.vue = v; const p = dessiner(); if (p) centrer(etat.choisi, p); });
+$("deplier").onclick = () => { FICHES.forEach(f => { if (enfants[f.id]) etat.ouverts.add(f.id); }); dessiner(); };
+$("replier").onclick = () => { etat.ouverts = new Set(["verbe", ...BRANCHES.map(b => b[0])]); ancetres(etat.choisi).forEach(a => etat.ouverts.add(a)); dessiner(); };
+$("q").oninput = chercher;
+$("q").onkeydown = e => {
+  if (e.key === "Enter") { const b = $("resultats").querySelector("[data-id]"); if (b) aller(b.dataset.id); }
+  if (e.key === "Escape") { $("q").value = ""; $("resultats").hidden = true; }
+};
+etroit.addEventListener("change", dessiner);
+addEventListener("resize", () => { if (etat.vue === "carte" && !etroit.matches) dessiner(); });
+document.fonts?.ready.then(() => { const p = dessiner(); centrer("verbe", p); });
+
+poserFiltres(); dessinerSources(); imprimable(); dessinerFiche();
+if (etroit.matches) $("fiche").hidden = true;
+centrer("verbe", dessiner());
+</script>
