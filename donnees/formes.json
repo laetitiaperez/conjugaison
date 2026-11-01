@@ -1,0 +1,926 @@
+{
+ "chanter": {
+  "indicatif:Présent": [
+   "je chante",
+   "tu chantes",
+   "il chante",
+   "nous chantons",
+   "vous chantez",
+   "ils chantent"
+  ],
+  "indicatif:Passé composé": [
+   "j'ai chanté",
+   "tu as chanté",
+   "il a chanté",
+   "nous avons chanté",
+   "vous avez chanté",
+   "ils ont chanté"
+  ],
+  "indicatif:Imparfait": [
+   "je chantais",
+   "tu chantais",
+   "il chantait",
+   "nous chantions",
+   "vous chantiez",
+   "ils chantaient"
+  ],
+  "indicatif:Plus-que-parfait": [
+   "j'avais chanté",
+   "tu avais chanté",
+   "il avait chanté",
+   "nous avions chanté",
+   "vous aviez chanté",
+   "ils avaient chanté"
+  ],
+  "indicatif:Passé simple": [
+   "je chantai",
+   "tu chantas",
+   "il chanta",
+   "nous chantâmes",
+   "vous chantâtes",
+   "ils chantèrent"
+  ],
+  "indicatif:Passé antérieur": [
+   "j'eus chanté",
+   "tu eus chanté",
+   "il eut chanté",
+   "nous eûmes chanté",
+   "vous eûtes chanté",
+   "ils eurent chanté"
+  ],
+  "indicatif:Futur simple": [
+   "je chanterai",
+   "tu chanteras",
+   "il chantera",
+   "nous chanterons",
+   "vous chanterez",
+   "ils chanteront"
+  ],
+  "indicatif:Futur antérieur": [
+   "j'aurai chanté",
+   "tu auras chanté",
+   "il aura chanté",
+   "nous aurons chanté",
+   "vous aurez chanté",
+   "ils auront chanté"
+  ],
+  "subjonctif:Présent": [
+   "que je chante",
+   "que tu chantes",
+   "qu'il chante",
+   "que nous chantions",
+   "que vous chantiez",
+   "qu'ils chantent"
+  ],
+  "subjonctif:Passé": [
+   "que j'aie chanté",
+   "que tu aies chanté",
+   "qu'il ait chanté",
+   "que nous ayons chanté",
+   "que vous ayez chanté",
+   "qu'ils aient chanté"
+  ],
+  "subjonctif:Imparfait": [
+   "que je chantasse",
+   "que tu chantasses",
+   "qu'il chantât",
+   "que nous chantassions",
+   "que vous chantassiez",
+   "qu'ils chantassent"
+  ],
+  "subjonctif:Plus-que-parfait": [
+   "que j'eusse chanté",
+   "que tu eusses chanté",
+   "qu'il eût chanté",
+   "que nous eussions chanté",
+   "que vous eussiez chanté",
+   "qu'ils eussent chanté"
+  ],
+  "conditionnel:Présent": [
+   "je chanterais",
+   "tu chanterais",
+   "il chanterait",
+   "nous chanterions",
+   "vous chanteriez",
+   "ils chanteraient"
+  ],
+  "conditionnel:Passé première forme": [
+   "j'aurais chanté",
+   "tu aurais chanté",
+   "il aurait chanté",
+   "nous aurions chanté",
+   "vous auriez chanté",
+   "ils auraient chanté"
+  ],
+  "conditionnel:Passé deuxième forme": [
+   "j'eusse chanté",
+   "tu eusses chanté",
+   "il eût chanté",
+   "nous eussions chanté",
+   "vous eussiez chanté",
+   "ils eussent chanté"
+  ],
+  "imperatif:Présent": [
+   "chante",
+   "chantons",
+   "chantez"
+  ],
+  "imperatif:Passé": [
+   "aie chanté",
+   "ayons chanté",
+   "ayez chanté"
+  ],
+  "participe:Présent": [
+   "chantant"
+  ],
+  "participe:Passé": [
+   "chanté",
+   "chantée",
+   "chantés",
+   "chantées",
+   "ayant chanté"
+  ],
+  "infinitif:Présent": [
+   "chanter"
+  ],
+  "infinitif:Passé": [
+   "avoir chanté"
+  ],
+  "gerondif:Présent": [
+   "en chantant"
+  ],
+  "gerondif:Passé": [
+   "en ayant chanté"
+  ]
+ },
+ "finir": {
+  "indicatif:Présent": [
+   "je finis",
+   "tu finis",
+   "il finit",
+   "nous finissons",
+   "vous finissez",
+   "ils finissent"
+  ],
+  "indicatif:Passé composé": [
+   "j'ai fini",
+   "tu as fini",
+   "il a fini",
+   "nous avons fini",
+   "vous avez fini",
+   "ils ont fini"
+  ],
+  "indicatif:Imparfait": [
+   "je finissais",
+   "tu finissais",
+   "il finissait",
+   "nous finissions",
+   "vous finissiez",
+   "ils finissaient"
+  ],
+  "indicatif:Plus-que-parfait": [
+   "j'avais fini",
+   "tu avais fini",
+   "il avait fini",
+   "nous avions fini",
+   "vous aviez fini",
+   "ils avaient fini"
+  ],
+  "indicatif:Passé simple": [
+   "je finis",
+   "tu finis",
+   "il finit",
+   "nous finîmes",
+   "vous finîtes",
+   "ils finirent"
+  ],
+  "indicatif:Passé antérieur": [
+   "j'eus fini",
+   "tu eus fini",
+   "il eut fini",
+   "nous eûmes fini",
+   "vous eûtes fini",
+   "ils eurent fini"
+  ],
+  "indicatif:Futur simple": [
+   "je finirai",
+   "tu finiras",
+   "il finira",
+   "nous finirons",
+   "vous finirez",
+   "ils finiront"
+  ],
+  "indicatif:Futur antérieur": [
+   "j'aurai fini",
+   "tu auras fini",
+   "il aura fini",
+   "nous aurons fini",
+   "vous aurez fini",
+   "ils auront fini"
+  ],
+  "subjonctif:Présent": [
+   "que je finisse",
+   "que tu finisses",
+   "qu'il finisse",
+   "que nous finissions",
+   "que vous finissiez",
+   "qu'ils finissent"
+  ],
+  "subjonctif:Passé": [
+   "que j'aie fini",
+   "que tu aies fini",
+   "qu'il ait fini",
+   "que nous ayons fini",
+   "que vous ayez fini",
+   "qu'ils aient fini"
+  ],
+  "subjonctif:Imparfait": [
+   "que je finisse",
+   "que tu finisses",
+   "qu'il finît",
+   "que nous finissions",
+   "que vous finissiez",
+   "qu'ils finissent"
+  ],
+  "subjonctif:Plus-que-parfait": [
+   "que j'eusse fini",
+   "que tu eusses fini",
+   "qu'il eût fini",
+   "que nous eussions fini",
+   "que vous eussiez fini",
+   "qu'ils eussent fini"
+  ],
+  "conditionnel:Présent": [
+   "je finirais",
+   "tu finirais",
+   "il finirait",
+   "nous finirions",
+   "vous finiriez",
+   "ils finiraient"
+  ],
+  "conditionnel:Passé première forme": [
+   "j'aurais fini",
+   "tu aurais fini",
+   "il aurait fini",
+   "nous aurions fini",
+   "vous auriez fini",
+   "ils auraient fini"
+  ],
+  "conditionnel:Passé deuxième forme": [
+   "j'eusse fini",
+   "tu eusses fini",
+   "il eût fini",
+   "nous eussions fini",
+   "vous eussiez fini",
+   "ils eussent fini"
+  ],
+  "imperatif:Présent": [
+   "finis",
+   "finissons",
+   "finissez"
+  ],
+  "imperatif:Passé": [
+   "aie fini",
+   "ayons fini",
+   "ayez fini"
+  ],
+  "participe:Présent": [
+   "finissant"
+  ],
+  "participe:Passé": [
+   "fini",
+   "finie",
+   "finis",
+   "finies",
+   "ayant fini"
+  ],
+  "infinitif:Présent": [
+   "finir"
+  ],
+  "infinitif:Passé": [
+   "avoir fini"
+  ],
+  "gerondif:Présent": [
+   "en finissant"
+  ],
+  "gerondif:Passé": [
+   "en ayant fini"
+  ]
+ },
+ "prendre": {
+  "indicatif:Présent": [
+   "je prends",
+   "tu prends",
+   "il prend",
+   "nous prenons",
+   "vous prenez",
+   "ils prennent"
+  ],
+  "indicatif:Passé composé": [
+   "j'ai pris",
+   "tu as pris",
+   "il a pris",
+   "nous avons pris",
+   "vous avez pris",
+   "ils ont pris"
+  ],
+  "indicatif:Imparfait": [
+   "je prenais",
+   "tu prenais",
+   "il prenait",
+   "nous prenions",
+   "vous preniez",
+   "ils prenaient"
+  ],
+  "indicatif:Plus-que-parfait": [
+   "j'avais pris",
+   "tu avais pris",
+   "il avait pris",
+   "nous avions pris",
+   "vous aviez pris",
+   "ils avaient pris"
+  ],
+  "indicatif:Passé simple": [
+   "je pris",
+   "tu pris",
+   "il prit",
+   "nous prîmes",
+   "vous prîtes",
+   "ils prirent"
+  ],
+  "indicatif:Passé antérieur": [
+   "j'eus pris",
+   "tu eus pris",
+   "il eut pris",
+   "nous eûmes pris",
+   "vous eûtes pris",
+   "ils eurent pris"
+  ],
+  "indicatif:Futur simple": [
+   "je prendrai",
+   "tu prendras",
+   "il prendra",
+   "nous prendrons",
+   "vous prendrez",
+   "ils prendront"
+  ],
+  "indicatif:Futur antérieur": [
+   "j'aurai pris",
+   "tu auras pris",
+   "il aura pris",
+   "nous aurons pris",
+   "vous aurez pris",
+   "ils auront pris"
+  ],
+  "subjonctif:Présent": [
+   "que je prenne",
+   "que tu prennes",
+   "qu'il prenne",
+   "que nous prenions",
+   "que vous preniez",
+   "qu'ils prennent"
+  ],
+  "subjonctif:Passé": [
+   "que j'aie pris",
+   "que tu aies pris",
+   "qu'il ait pris",
+   "que nous ayons pris",
+   "que vous ayez pris",
+   "qu'ils aient pris"
+  ],
+  "subjonctif:Imparfait": [
+   "que je prisse",
+   "que tu prisses",
+   "qu'il prît",
+   "que nous prissions",
+   "que vous prissiez",
+   "qu'ils prissent"
+  ],
+  "subjonctif:Plus-que-parfait": [
+   "que j'eusse pris",
+   "que tu eusses pris",
+   "qu'il eût pris",
+   "que nous eussions pris",
+   "que vous eussiez pris",
+   "qu'ils eussent pris"
+  ],
+  "conditionnel:Présent": [
+   "je prendrais",
+   "tu prendrais",
+   "il prendrait",
+   "nous prendrions",
+   "vous prendriez",
+   "ils prendraient"
+  ],
+  "conditionnel:Passé première forme": [
+   "j'aurais pris",
+   "tu aurais pris",
+   "il aurait pris",
+   "nous aurions pris",
+   "vous auriez pris",
+   "ils auraient pris"
+  ],
+  "conditionnel:Passé deuxième forme": [
+   "j'eusse pris",
+   "tu eusses pris",
+   "il eût pris",
+   "nous eussions pris",
+   "vous eussiez pris",
+   "ils eussent pris"
+  ],
+  "imperatif:Présent": [
+   "prends",
+   "prenons",
+   "prenez"
+  ],
+  "imperatif:Passé": [
+   "aie pris",
+   "ayons pris",
+   "ayez pris"
+  ],
+  "participe:Présent": [
+   "prenant"
+  ],
+  "participe:Passé": [
+   "pris",
+   "prise",
+   "pris",
+   "prises",
+   "ayant pris"
+  ],
+  "infinitif:Présent": [
+   "prendre"
+  ],
+  "infinitif:Passé": [
+   "avoir pris"
+  ],
+  "gerondif:Présent": [
+   "en prenant"
+  ],
+  "gerondif:Passé": [
+   "en ayant pris"
+  ]
+ },
+ "etre": {
+  "indicatif:Présent": [
+   "je suis",
+   "tu es",
+   "il est",
+   "nous sommes",
+   "vous êtes",
+   "ils sont"
+  ],
+  "indicatif:Passé composé": [
+   "j'ai été",
+   "tu as été",
+   "il a été",
+   "nous avons été",
+   "vous avez été",
+   "ils ont été"
+  ],
+  "indicatif:Imparfait": [
+   "j'étais",
+   "tu étais",
+   "il était",
+   "nous étions",
+   "vous étiez",
+   "ils étaient"
+  ],
+  "indicatif:Plus-que-parfait": [
+   "j'avais été",
+   "tu avais été",
+   "il avait été",
+   "nous avions été",
+   "vous aviez été",
+   "ils avaient été"
+  ],
+  "indicatif:Passé simple": [
+   "je fus",
+   "tu fus",
+   "il fut",
+   "nous fûmes",
+   "vous fûtes",
+   "ils furent"
+  ],
+  "indicatif:Passé antérieur": [
+   "j'eus été",
+   "tu eus été",
+   "il eut été",
+   "nous eûmes été",
+   "vous eûtes été",
+   "ils eurent été"
+  ],
+  "indicatif:Futur simple": [
+   "je serai",
+   "tu seras",
+   "il sera",
+   "nous serons",
+   "vous serez",
+   "ils seront"
+  ],
+  "indicatif:Futur antérieur": [
+   "j'aurai été",
+   "tu auras été",
+   "il aura été",
+   "nous aurons été",
+   "vous aurez été",
+   "ils auront été"
+  ],
+  "subjonctif:Présent": [
+   "que je sois",
+   "que tu sois",
+   "qu'il soit",
+   "que nous soyons",
+   "que vous soyez",
+   "qu'ils soient"
+  ],
+  "subjonctif:Passé": [
+   "que j'aie été",
+   "que tu aies été",
+   "qu'il ait été",
+   "que nous ayons été",
+   "que vous ayez été",
+   "qu'ils aient été"
+  ],
+  "subjonctif:Imparfait": [
+   "que je fusse",
+   "que tu fusses",
+   "qu'il fût",
+   "que nous fussions",
+   "que vous fussiez",
+   "qu'ils fussent"
+  ],
+  "subjonctif:Plus-que-parfait": [
+   "que j'eusse été",
+   "que tu eusses été",
+   "qu'il eût été",
+   "que nous eussions été",
+   "que vous eussiez été",
+   "qu'ils eussent été"
+  ],
+  "conditionnel:Présent": [
+   "je serais",
+   "tu serais",
+   "il serait",
+   "nous serions",
+   "vous seriez",
+   "ils seraient"
+  ],
+  "conditionnel:Passé première forme": [
+   "j'aurais été",
+   "tu aurais été",
+   "il aurait été",
+   "nous aurions été",
+   "vous auriez été",
+   "ils auraient été"
+  ],
+  "conditionnel:Passé deuxième forme": [
+   "j'eusse été",
+   "tu eusses été",
+   "il eût été",
+   "nous eussions été",
+   "vous eussiez été",
+   "ils eussent été"
+  ],
+  "imperatif:Présent": [
+   "sois",
+   "soyons",
+   "soyez"
+  ],
+  "imperatif:Passé": [
+   "aie été",
+   "ayons été",
+   "ayez été"
+  ],
+  "participe:Présent": [
+   "étant"
+  ],
+  "participe:Passé": [
+   "été",
+   "été",
+   "été",
+   "été",
+   "ayant été"
+  ],
+  "infinitif:Présent": [
+   "être"
+  ],
+  "infinitif:Passé": [
+   "avoir été"
+  ],
+  "gerondif:Présent": [
+   "en étant"
+  ],
+  "gerondif:Passé": [
+   "en ayant été"
+  ]
+ },
+ "avoir": {
+  "indicatif:Présent": [
+   "j'ai",
+   "tu as",
+   "il a",
+   "nous avons",
+   "vous avez",
+   "ils ont"
+  ],
+  "indicatif:Passé composé": [
+   "j'ai eu",
+   "tu as eu",
+   "il a eu",
+   "nous avons eu",
+   "vous avez eu",
+   "ils ont eu"
+  ],
+  "indicatif:Imparfait": [
+   "j'avais",
+   "tu avais",
+   "il avait",
+   "nous avions",
+   "vous aviez",
+   "ils avaient"
+  ],
+  "indicatif:Plus-que-parfait": [
+   "j'avais eu",
+   "tu avais eu",
+   "il avait eu",
+   "nous avions eu",
+   "vous aviez eu",
+   "ils avaient eu"
+  ],
+  "indicatif:Passé simple": [
+   "j'eus",
+   "tu eus",
+   "il eut",
+   "nous eûmes",
+   "vous eûtes",
+   "ils eurent"
+  ],
+  "indicatif:Passé antérieur": [
+   "j'eus eu",
+   "tu eus eu",
+   "il eut eu",
+   "nous eûmes eu",
+   "vous eûtes eu",
+   "ils eurent eu"
+  ],
+  "indicatif:Futur simple": [
+   "j'aurai",
+   "tu auras",
+   "il aura",
+   "nous aurons",
+   "vous aurez",
+   "ils auront"
+  ],
+  "indicatif:Futur antérieur": [
+   "j'aurai eu",
+   "tu auras eu",
+   "il aura eu",
+   "nous aurons eu",
+   "vous aurez eu",
+   "ils auront eu"
+  ],
+  "subjonctif:Présent": [
+   "que j'aie",
+   "que tu aies",
+   "qu'il ait",
+   "que nous ayons",
+   "que vous ayez",
+   "qu'ils aient"
+  ],
+  "subjonctif:Passé": [
+   "que j'aie eu",
+   "que tu aies eu",
+   "qu'il ait eu",
+   "que nous ayons eu",
+   "que vous ayez eu",
+   "qu'ils aient eu"
+  ],
+  "subjonctif:Imparfait": [
+   "que j'eusse",
+   "que tu eusses",
+   "qu'il eût",
+   "que nous eussions",
+   "que vous eussiez",
+   "qu'ils eussent"
+  ],
+  "subjonctif:Plus-que-parfait": [
+   "que j'eusse eu",
+   "que tu eusses eu",
+   "qu'il eût eu",
+   "que nous eussions eu",
+   "que vous eussiez eu",
+   "qu'ils eussent eu"
+  ],
+  "conditionnel:Présent": [
+   "j'aurais",
+   "tu aurais",
+   "il aurait",
+   "nous aurions",
+   "vous auriez",
+   "ils auraient"
+  ],
+  "conditionnel:Passé première forme": [
+   "j'aurais eu",
+   "tu aurais eu",
+   "il aurait eu",
+   "nous aurions eu",
+   "vous auriez eu",
+   "ils auraient eu"
+  ],
+  "conditionnel:Passé deuxième forme": [
+   "j'eusse eu",
+   "tu eusses eu",
+   "il eût eu",
+   "nous eussions eu",
+   "vous eussiez eu",
+   "ils eussent eu"
+  ],
+  "imperatif:Présent": [
+   "aie",
+   "ayons",
+   "ayez"
+  ],
+  "imperatif:Passé": [
+   "aie eu",
+   "ayons eu",
+   "ayez eu"
+  ],
+  "participe:Présent": [
+   "ayant"
+  ],
+  "participe:Passé": [
+   "eu",
+   "eue",
+   "eus",
+   "eues",
+   "ayant eu"
+  ],
+  "infinitif:Présent": [
+   "avoir"
+  ],
+  "infinitif:Passé": [
+   "avoir eu"
+  ],
+  "gerondif:Présent": [
+   "en ayant"
+  ],
+  "gerondif:Passé": [
+   "en ayant eu"
+  ]
+ },
+ "aller": {
+  "indicatif:Présent": [
+   "je vais",
+   "tu vas",
+   "il va",
+   "nous allons",
+   "vous allez",
+   "ils vont"
+  ],
+  "indicatif:Passé composé": [
+   "je suis allé",
+   "tu es allé",
+   "il est allé",
+   "nous sommes allés",
+   "vous êtes allés",
+   "ils sont allés"
+  ],
+  "indicatif:Imparfait": [
+   "j'allais",
+   "tu allais",
+   "il allait",
+   "nous allions",
+   "vous alliez",
+   "ils allaient"
+  ],
+  "indicatif:Plus-que-parfait": [
+   "j'étais allé",
+   "tu étais allé",
+   "il était allé",
+   "nous étions allés",
+   "vous étiez allés",
+   "ils étaient allés"
+  ],
+  "indicatif:Passé simple": [
+   "j'allai",
+   "tu allas",
+   "il alla",
+   "nous allâmes",
+   "vous allâtes",
+   "ils allèrent"
+  ],
+  "indicatif:Passé antérieur": [
+   "je fus allé",
+   "tu fus allé",
+   "il fut allé",
+   "nous fûmes allés",
+   "vous fûtes allés",
+   "ils furent allés"
+  ],
+  "indicatif:Futur simple": [
+   "j'irai",
+   "tu iras",
+   "il ira",
+   "nous irons",
+   "vous irez",
+   "ils iront"
+  ],
+  "indicatif:Futur antérieur": [
+   "je serai allé",
+   "tu seras allé",
+   "il sera allé",
+   "nous serons allés",
+   "vous serez allés",
+   "ils seront allés"
+  ],
+  "subjonctif:Présent": [
+   "que j'aille",
+   "que tu ailles",
+   "qu'il aille",
+   "que nous allions",
+   "que vous alliez",
+   "qu'ils aillent"
+  ],
+  "subjonctif:Passé": [
+   "que je sois allé",
+   "que tu sois allé",
+   "qu'il soit allé",
+   "que nous soyons allés",
+   "que vous soyez allés",
+   "qu'ils soient allés"
+  ],
+  "subjonctif:Imparfait": [
+   "que j'allasse",
+   "que tu allasses",
+   "qu'il allât",
+   "que nous allassions",
+   "que vous allassiez",
+   "qu'ils allassent"
+  ],
+  "subjonctif:Plus-que-parfait": [
+   "que je fusse allé",
+   "que tu fusses allé",
+   "qu'il fût allé",
+   "que nous fussions allés",
+   "que vous fussiez allés",
+   "qu'ils fussent allés"
+  ],
+  "conditionnel:Présent": [
+   "j'irais",
+   "tu irais",
+   "il irait",
+   "nous irions",
+   "vous iriez",
+   "ils iraient"
+  ],
+  "conditionnel:Passé première forme": [
+   "je serais allé",
+   "tu serais allé",
+   "il serait allé",
+   "nous serions allés",
+   "vous seriez allés",
+   "ils seraient allés"
+  ],
+  "conditionnel:Passé deuxième forme": [
+   "je fusse allé",
+   "tu fusses allé",
+   "il fût allé",
+   "nous fussions allés",
+   "vous fussiez allés",
+   "ils fussent allés"
+  ],
+  "imperatif:Présent": [
+   "va",
+   "allons",
+   "allez"
+  ],
+  "imperatif:Passé": [
+   "sois allé",
+   "soyons allés",
+   "soyez allés"
+  ],
+  "participe:Présent": [
+   "allant"
+  ],
+  "participe:Passé": [
+   "allé",
+   "allée",
+   "allés",
+   "allées",
+   "étant allé"
+  ],
+  "infinitif:Présent": [
+   "aller"
+  ],
+  "infinitif:Passé": [
+   "être allé"
+  ],
+  "gerondif:Présent": [
+   "en allant"
+  ],
+  "gerondif:Passé": [
+   "en étant allé"
+  ]
+ }
+}
